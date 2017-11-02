@@ -1,0 +1,121 @@
+<idoctype html>
+<head>
+	<meta charset = "utf-8">
+	<link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+	<title>heart_dart_game_website</title>
+
+</head>
+
+
+<header>
+	<img src="logo.png" style="width:200px; float:left; 
+	margin-top:20px; margin-left:-190px;">
+
+	<div>
+	<a href="https://www.instagram.com/96_5_8/">
+      <img src="mu1.png" style="width:40px; float:right;">
+  	</a>
+	 
+	<a href="https://www.facebook.com/juhyeon.lee.144">
+	  <img src="mu2.png" style="width:38px; float:right;">
+	</a>
+
+	<a href="https://leejuhyeon96.github.io/heart_dart_game/">
+      <img src="mu3.png" style="width:250px; float:right; margin-top: -7px;">
+  	</a>
+	</div>
+</header>
+
+
+<body>
+<img src="hoot.png" style="width:800px;margin-left:110px;margin-top:-160px;">
+
+	<section id="s1">
+		<h2>게임 소개</h2>
+		<p>누구나 금방 할 수 있는 스낵게임. 단순 활쏘기 게임으로 점수가 오를수록 레벨과 난이도가 높아진다. 랭킹 기록이 가능하다. 캐릭터는 하트와 다트. 게임 컨셉은 사랑스러움이고, 하트가 다트를 좋아하는데 그가 자신에게 사랑에 빠지도록 큐피드의 화살을 쏘는 것이다.</p>
+	</section>
+
+	<section id="s1">
+		<h2>캐릭터 소개</h2>
+		<p>하트(여)와 다트(남) 하트는 다트를 좋아해서 적극 구애하지만 다트는 하트를 부담스러워하고 있다.</p>
+	</section>
+
+<script>
+	var game = setInterval(attachBalloon,2000);
+	function result(){
+		clearInterval(game);
+	}
+
+	function attachBalloon(){
+		var t = document.createElement("div");
+		t.setAttribute("class","balloon"); 
+		t.style.position = "absolute"; 
+		
+		var color = randomBH(1);
+		t.style.background = "url('hoot" + ".png') no-repeat";
+		
+		t.style.backgroundSize = "100%";
+		t.style.top = randomBH(0,window.innerHeight - 300) + "px";
+		t.style.left = randomBH(0,window.innerWidth) + "px";
+		t.addEventListener("animationend",remove);
+		t.onclick = function(){
+			markUp(this, color);
+		}
+		document.body.appendChild(t);		
+	}
+	
+		{displayMark.innerHTML = markText;
+		remove(t);
+	}
+
+
+	//지워주기 함수(이건 그냥 복붙 )	
+	function remove(){
+		var t = event.target; //이벤트의 타겟을 t로 지정하고.
+		t.parentNode.removeChild(t); //그 엄마를 찾아서 자식중에 t를 지워라. 
+	}
+
+	//최소값과 최대값 사이의 임의의 숫자를 리턴하는 함수(복붙)
+	function randomBH(min, max) {
+  		min = Math.ceil(min);
+  		max = Math.floor(max);
+  		return Math.floor(Math.random() * (max - min + 1)) + min;}
+	</script>
+</body>
+
+
+<footer>
+	<br><br>hknu design / digital publishing / juhyeonLee <br><br>
+</footer>
+
+
+<style>
+		html { font-family: 'Spoqa Han Sans'; font-weight: 200;}
+		.section{height:600px;width:100%; position: relative}
+		header{width:100%;float:left;}
+		body{width:1000px;margin:0 auto;}
+		h1{position:absolute;width:100%;color:white;font-size: 3em;text-align: center;padding-top:280px; line-height: 1.2;padding-left: 100px;padding-right: 100px;letter-spacing: -1px;}
+		div{height:300px;margin-right:-190px;margin-top:20px;}
+
+		.balloon{
+			width:80px; height:1500px; 
+			background-repeat:no-repeat;
+			animation: bMove 8s linear;}
+		@keyframes bMove{
+		0%{ background-position: 0 200px; opacity:0;}
+		20%{opacity:1;}
+		80%{ opacity:1; }
+		100%{ background-position:0 0;opacity:0;}
+		}
+
+		section{width:960px; height:600px; margin:0 auto;position: relative}
+		section h2{color:white; font-size: 40px; font-weight:300; position: absolute;line-height: 1.2;}
+		section p{color:white; font-size: 17px; font-weight:200; position: absolute;line-height: 1.5;width:550px;}
+		
+		#s1 h2{color:black;left:-100px; top:100px;}
+		#s1 p{color:black;left:-100px; top:180px;}
+
+
+		footer{text-align:center;font-weight:100;font-size:12px;}
+</style>
+
