@@ -28,19 +28,9 @@
 
 
 <body>
-<img src="hoot.png" style="width:800px;margin-left:110px;margin-top:-160px;">
+<img src="hoot.png" style="width:1300px;margin-left:-140px;margin-top:-120px;">
 
-	<section id="s1">
-		<h2>게임 소개</h2>
-		<p>누구나 금방 할 수 있는 스낵게임. 단순 활쏘기 게임으로 점수가 오를수록 레벨과 난이도가 높아진다. 랭킹 기록이 가능하다. 캐릭터는 하트와 다트. 게임 컨셉은 사랑스러움이고, 하트가 다트를 좋아하는데 그가 자신에게 사랑에 빠지도록 큐피드의 화살을 쏘는 것이다.</p>
-	</section>
-
-	<section id="s1">
-		<h2>캐릭터 소개</h2>
-		<p>하트(여)와 다트(남) 하트는 다트를 좋아해서 적극 구애하지만 다트는 하트를 부담스러워하고 있다.</p>
-	</section>
-
-<script>
+	<script>
 	var game = setInterval(attachBalloon,2000);
 	function result(){
 		clearInterval(game);
@@ -52,7 +42,7 @@
 		t.style.position = "absolute"; 
 		
 		var color = randomBH(1);
-		t.style.background = "url('hoot" + ".png') no-repeat";
+		t.style.background = "url('hoot1" + ".png') no-repeat";
 		
 		t.style.backgroundSize = "100%";
 		t.style.top = randomBH(0,window.innerHeight - 300) + "px";
